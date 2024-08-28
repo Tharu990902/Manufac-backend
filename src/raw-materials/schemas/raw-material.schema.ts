@@ -1,12 +1,9 @@
-import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { HydratedDocument } from 'mongoose';
-
-export type RawMaterialDocument = HydratedDocument<RawMaterial>;
-
+import { Schema, Prop, SchemaFactory } from '@nestjs/mongoose';
+import { Document } from 'mongoose';
 
 @Schema()
-export class RawMaterial {
-  
+export class RawMaterial extends Document {
+ 
   @Prop({ required: true })
   materialName: string;
 
@@ -19,14 +16,16 @@ export class RawMaterial {
   @Prop({ required: true })
   unitOfMeasure: string;
 
-  @Prop({ type: Number, default: 0 })
-  reorderLevel?: number;
+  @Prop({ required: true })
+  reorderLevel: number;
 
   @Prop({ type: String, default: '' })
   description?: string;
- 
+
   @Prop({ required: true, default: false })
   hasVariants: boolean;
+
+  
 }
 
 export const RawMaterialSchema = SchemaFactory.createForClass(RawMaterial);
