@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Body, Controller, Get, Post } from '@nestjs/common';
 import { RawMaterialsService } from './raw-materials.service';
 import { RawMaterial } from './schemas/raw-material.schema';
