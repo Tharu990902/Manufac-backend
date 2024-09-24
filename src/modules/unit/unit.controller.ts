@@ -4,7 +4,7 @@ import { UnitService } from './unit.service';
 import { CreateUnitDto } from './dto/create-unit.dto';
 
 
-@Controller('unitOfMeasure')
+@Controller('units')
 export class UnitController {
   constructor(private readonly unitService: UnitService) {}
 

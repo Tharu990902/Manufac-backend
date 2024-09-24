@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 export class CreateVariantDto {
 
     readonly variantName: string;

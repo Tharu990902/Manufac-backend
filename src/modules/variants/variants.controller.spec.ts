@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Test, TestingModule } from '@nestjs/testing';
 import { VariantsController } from './variants.controller';
 import { VariantsService } from './variants.service';
