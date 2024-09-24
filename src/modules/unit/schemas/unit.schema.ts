@@ -7,7 +7,7 @@ export type UnitDocument = Unit & Document;
 @Schema()
 export class Unit {
   @Prop({ required: true })
-      unitOfMeasure: string;
+      unitName: string;
 }
 
 export const UnitSchema = SchemaFactory.createForClass(Unit);

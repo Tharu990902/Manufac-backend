@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 import { Body, Controller, Get, Param, Post } from '@nestjs/common';
 import { VariantsService } from './variants.service';
 import { Variant } from './schemas/variant.schema';

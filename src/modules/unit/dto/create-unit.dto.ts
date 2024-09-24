@@ -5,5 +5,5 @@ import {  IsString} from 'class-validator';
 export class CreateUnitDto {
 
     @IsString()
-    readonly unitOfMeasure: string;
+    readonly unitName: string;
 }

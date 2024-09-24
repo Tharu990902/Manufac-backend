@@ -7,6 +7,7 @@ import * as dotenv from 'dotenv';
 import { ConfigModule } from '@nestjs/config';
 import { DatabaseConfig } from './config/Database.config';
 import { VariantsModule } from './modules/variants/variants.module';
+import { UnitModule } from './modules/unit/unit.module';
 
 dotenv.config();
 
@@ -18,6 +19,7 @@ dotenv.config();
   RawMaterialsModule, 
     DatabaseConfig,
     VariantsModule,
+    UnitModule
   ],
   controllers: [AppController,],
   providers: [AppService],

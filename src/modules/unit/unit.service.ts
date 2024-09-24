@@ -8,7 +8,7 @@ import { CreateUnitDto } from './dto/create-unit.dto';
 
 @Injectable()
 export class UnitService {
-  constructor(@InjectModel('unitOfMeasure') private unitModel: Model<UnitDocument>) {}
+  constructor(@InjectModel('unit') private unitModel: Model<UnitDocument>) {}
 
   async create(createUnitDto: CreateUnitDto): Promise<Unit> {
     const newUnit = new this.unitModel(createUnitDto);

@@ -2,7 +2,6 @@
 import { Body, Controller, Get, Post } from '@nestjs/common';
 import { RawMaterialsService } from './raw-materials.service';
 import { RawMaterial } from './schemas/raw-material.schema';
-import { v4 as uuidv4 } from 'uuid'; // Import UUID generator
 import { CreateRawMaterialDto } from './dto/create-raw-material.dto/create-raw-material.dto';
 
 @Controller('raw-materials')
