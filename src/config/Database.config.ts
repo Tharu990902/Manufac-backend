@@ -34,4 +34,5 @@ export const DatabaseConfig = MongooseModule.forRootAsync({
     };
   },
   inject: [ConfigService],
-});
+}); 
+ 

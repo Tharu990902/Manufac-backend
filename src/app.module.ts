@@ -6,6 +6,7 @@ import { RawMaterialsModule } from './modules/raw-materials/raw-materials.module
 import * as dotenv from 'dotenv';
 import { ConfigModule } from '@nestjs/config';
 import { DatabaseConfig } from './config/Database.config';
+import { VariantsModule } from './modules/variants/variants.module';
 
 dotenv.config();
 
@@ -14,10 +15,11 @@ dotenv.config();
     ConfigModule.forRoot({
       isGlobal: true,
     }),
-  RawMaterialsModule,
+  RawMaterialsModule, 
     DatabaseConfig,
+    VariantsModule,
   ],
-  controllers: [AppController],
+  controllers: [AppController,],
   providers: [AppService],
 })
 export class AppModule {}  
