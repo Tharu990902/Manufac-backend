@@ -29,6 +29,6 @@ export class RawMaterialsController {
   @Post('check-material-code')
   async isMaterialCodeTaken(@Body('materialCode') materialCode: string) {
     const isTaken = await this.rawMaterialsService.isMaterialCodeTaken(materialCode);
-    return { available: isTaken };
+    return { available: !isTaken };
   }
 } 
