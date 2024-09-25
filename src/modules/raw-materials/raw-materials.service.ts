@@ -24,7 +24,7 @@ export class RawMaterialsService {
       return result;
       } 
 
-      async generateUniqueMaterialCode(materialName: string): Promise<string> {
+      async generateUniqueMaterialCode(materialName: string){
         const words = materialName.split(' ').filter(word => word.length > 0);
       
         let shortName;
@@ -39,7 +39,7 @@ export class RawMaterialsService {
         console.log('Generated short name:', shortName, 'Is unique?', isShortNameUnique);
       
         if (isShortNameUnique) {
-          for (let i = 1; i < 1000; i++) {
+          for (let i = 1; i < 1000; i++) { 
             const newShortName = `${shortName}${i}`;
             const isAvailable = await this.isMaterialCodeTaken(newShortName);
             console.log('Trying short name:', newShortName, 'Is available?', isAvailable);
@@ -51,7 +51,7 @@ export class RawMaterialsService {
           throw new Error('Could not generate a unique short name');
         }
       
-        return shortName;
+        return { materialCode: shortName }; 
       }
       
 
