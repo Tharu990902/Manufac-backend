@@ -20,7 +20,7 @@ dotenv.config();
     }),
     RawMaterialsModule,
     DatabaseConfig,
-    CategoryModule
+    CategoryModule,
     VariantsModule,
     UnitModule
   ],
