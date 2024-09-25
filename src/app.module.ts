@@ -7,6 +7,8 @@ import * as dotenv from 'dotenv';
 import { ConfigModule } from '@nestjs/config';
 import { DatabaseConfig } from './config/Database.config';
 
+import { CategoryModule } from './modules/category/Category.module'
+
 dotenv.config();
 
 @Module({
@@ -14,8 +16,9 @@ dotenv.config();
     ConfigModule.forRoot({
       isGlobal: true,
     }),
-  RawMaterialsModule,
+    RawMaterialsModule,
     DatabaseConfig,
+    CategoryModule
   ],
   controllers: [AppController],
   providers: [AppService],
