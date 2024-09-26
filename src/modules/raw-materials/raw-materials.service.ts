@@ -35,7 +35,7 @@ export class RawMaterialsService {
           shortName = words.map(word => word[0].toUpperCase()).join('');
         }
       
-        let isShortNameUnique = await this.isMaterialCodeTaken(shortName);
+        const isShortNameUnique = await this.isMaterialCodeTaken(shortName);
         console.log('Generated short name:', shortName, 'Is unique?', isShortNameUnique);
       
         if (isShortNameUnique) {
