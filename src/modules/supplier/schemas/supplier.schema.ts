@@ -5,7 +5,7 @@ import { Schema, SchemaFactory } from "@nestjs/mongoose";
 export class SupplierRegistration extends Document {
 
     @Prop({required: true})
-    supplierName: string
+    supplierName: string;
 
     @Prop({required: true, unique: true})
     supplierCode: string;
@@ -20,7 +20,7 @@ export class SupplierRegistration extends Document {
     email: string;
 
     @Prop({required: true})
-    address: string
+    address: string;
 }
 
 export const SupplierRegistrationSchema = SchemaFactory.createForClass(SupplierRegistration);
