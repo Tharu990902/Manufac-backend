@@ -10,7 +10,7 @@ import { VariantsModule } from './modules/variants/variants.module';
 import { UnitModule } from './modules/unit/unit.module';
 import {AuthModule} from './modules/authentication/Auth.module'
 import { CategoryModule } from './modules/category/Category.module'
-import { UserModule } from './modules/user/User.module';
+
 
 dotenv.config();
 
@@ -25,7 +25,7 @@ dotenv.config();
     CategoryModule,
     VariantsModule,
     UnitModule,
-    UserModule,
+  
   ],
   controllers: [AppController,],
   providers: [AppService],

@@ -4,9 +4,12 @@ import { Document } from 'mongoose';
 
 export type UserDocument = User & Document;
 
-@Schema()
+@Schema({timestamps: true})
+
+
 export class User {
-  @Prop({ required: true, unique: true })
+
+  @Prop({unique: [true, 'Email already exists'] })
   email: string;
 
   @Prop({ required: true })

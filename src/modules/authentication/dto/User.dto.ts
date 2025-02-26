@@ -2,14 +2,14 @@
 import { IsEmail, IsNotEmpty, MinLength } from 'class-validator';
 
 export class CreateUserDto {
-  @IsEmail()
+  @IsEmail({}, { message: 'Invalid email' })
   email: string;
 
   @IsNotEmpty()
   username: string;
 
   @IsNotEmpty()
-  @MinLength(6)
+  @MinLength(4)
   password: string;
 
   @IsNotEmpty()
