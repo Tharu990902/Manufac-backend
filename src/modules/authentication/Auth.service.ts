@@ -18,20 +18,21 @@ export class AuthService {
     private userModel: Model<UserDocument>,
     private  jwtService: JwtService,
   ) {}
-
-
-
+  
   async signUp(signUpDto: CreateUserDto): Promise<{ token: string, user: User }> {
 
     const { email, username, password, confirmPassword } = signUpDto;
+
         if (password !== confirmPassword) {
           throw new BadRequestException('Passwords do not match');
         }
         const existingUser = await this.userModel.findOne({ email });
         if (existingUser) {
           throw new BadRequestException('Email is already registered');
+
         }
         const hashedPassword = await bcrypt.hash(password, 4);
+
         const user = new this.userModel({
           email,
           username,
@@ -41,6 +42,7 @@ export class AuthService {
     const token =  this.jwtService.sign({id: user._id});
     await user.save();
     return { token, user };
+    
   }
 
       async login(Logindto: LoginDto): Promise<{ token: string }> {
@@ -58,7 +60,6 @@ export class AuthService {
         if (!isPasswordValid) {
           throw new UnauthorizedException("Invalid Email or Password");
         }
-
         const token = this.jwtService.sign({ id: user._id });
         return { token};
       }
